@@ -38,6 +38,10 @@ $(document).ready(function() {
 		$('#weblog_title').val(data.title);
 	}
 
+	if ( typeof data.description !='undefined' ) {
+		$('#weblog_description').val(data.description);
+	}
+
 	/*--------------------------*/
 	/*	Language
 	/*--------------------------*/

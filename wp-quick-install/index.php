@@ -295,6 +295,9 @@ if ( isset( $_GET['action'] ) ) {
 				update_option( 'siteurl', $url );
 				update_option( 'home', $url );
 
+				// Update Site description
+				update_option( 'blogdescription', $_POST['weblog_description'] );
+
 				/*--------------------------*/
 				/*	We remove the default content
 				/*--------------------------*/
@@ -687,6 +690,13 @@ else { ?>
 					<tr>
 						<th scope="row"><label for="weblog_title"><?php echo _('Site Title');?></label></th>
 						<td><input name="weblog_title" type="text" id="weblog_title" size="25" value="" class="required" /></td>
+					</tr>
+					<tr>
+						<th scope="row">
+							<label for="weblog_description"><?php echo _('Site Description');?></label>
+							<p><?php echo _('Leave blank to remove the default "Just another WordPress site" description');?></p>
+						</th>
+						<td><input name="weblog_description" type="text" id="weblog_description" size="25" value="" /></td>
 					</tr>
 					<tr>
 						<th scope="row"><label for="user_login"><?php echo _('Username');?></label></th>

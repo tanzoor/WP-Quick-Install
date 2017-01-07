@@ -295,9 +295,6 @@ if ( isset( $_GET['action'] ) ) {
 				update_option( 'siteurl', $url );
 				update_option( 'home', $url );
 
-				// Update Site description
-				update_option( 'blogdescription', $_POST['weblog_description'] );
-
 				/*--------------------------*/
 				/*	We remove the default content
 				/*--------------------------*/
@@ -334,7 +331,7 @@ if ( isset( $_GET['action'] ) ) {
 					update_option( 'large_size_h', (int) $_POST['large_size_h'] );
 				}
 
-				 update_option( 'uploads_use_yearmonth_folders', (int) $_POST['uploads_use_yearmonth_folders'] );
+				update_option( 'uploads_use_yearmonth_folders', (int) $_POST['uploads_use_yearmonth_folders'] );
 
 				/*--------------------------*/
 				/*	We add the pages we found in the data.ini file
@@ -415,6 +412,13 @@ if ( isset( $_GET['action'] ) ) {
 						}
 					}
 				}
+
+				/*--------------------------*/
+				/*	Custom improvements
+				/*--------------------------*/
+
+				// Update Site description
+				update_option( 'blogdescription', $_POST['weblog_description'] );
 
 				break;
 

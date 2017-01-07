@@ -12,5 +12,6 @@ Simply download the .zip archive and go to *wp-quick-install/index.php*
 Custom improvements
 -------------------
 
-* [enhancement] field for blog description
 * [bugfix] PHP 7 Notice
+* [enhancement] field for blog description
+* [enhancement] disable avatars if needed

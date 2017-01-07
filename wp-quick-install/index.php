@@ -420,6 +420,11 @@ if ( isset( $_GET['action'] ) ) {
 				// Update Site description
 				update_option( 'blogdescription', $_POST['weblog_description'] );
 
+				// Disable avatars if option checked
+				if ( $_POST['disable_avatars'] == 1 ) {
+					update_option( 'show_avatars', 0 );
+				}
+
 				break;
 
 			case "install_theme" :
@@ -839,6 +844,13 @@ else { ?>
 							<label for="uploads_use_yearmonth_folders" class="small-text"><input name="uploads_use_yearmonth_folders" type="checkbox" id="uploads_use_yearmonth_folders" value="1" checked="checked" /><?php echo _('Organize my files in monthly and annual folders')?></label>
 						</td>
 					</tr>
+					<tr>
+						<th scope="row">
+							<label for="disable_avatars"><?php echo _('Avatars');?></label>
+						</th>
+						<td><label><input type="checkbox" id="disable_avatars" name="disable_avatars" value="1" checked='checked' /><?php echo _('Disable avatars');?></label></td>
+					</tr>
+
 				</table>
 
 				<h1><?php echo _('wp-config.php Informations');?></h1>
@@ -856,7 +868,7 @@ else { ?>
 					</tr>
 					<tr>
 						<th scope="row">
-							<label for="plugins"><?php echo _('Editor');?></label>
+							<label for="disallow_file_edit"><?php echo _('Editor');?></label>
 						</th>
 						<td><label><input type="checkbox" id="disallow_file_edit" name="disallow_file_edit" value="1" checked='checked' /><?php echo _('Disable theme and extensions editor');?></label></td>
 					</tr>

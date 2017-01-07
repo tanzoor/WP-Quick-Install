@@ -38,10 +38,6 @@ $(document).ready(function() {
 		$('#weblog_title').val(data.title);
 	}
 
-	if ( typeof data.description !='undefined' ) {
-		$('#weblog_description').val(data.description);
-	}
-
 	/*--------------------------*/
 	/*	Language
 	/*--------------------------*/
@@ -223,6 +219,18 @@ $(document).ready(function() {
 			$('#wpcom_api_key').val(data.wp_config.wpcom_api_key);
 		}
 
+	}
+
+	/*--------------------------*/
+	/*	Custom improvements
+	/*--------------------------*/
+
+	if ( typeof data.description != 'undefined' ) {
+		$('#weblog_description').val(data.description);
+	}
+
+	if ( typeof data.disable_avatars !='undefined' ) {
+		( parseInt(data.disable_avatars) == 1 ) ? $('#disable_avatars').attr('checked', 'checked') : $('#disable_avatars').removeAttr('checked');
 	}
 
 	var $response  = $('#response');
